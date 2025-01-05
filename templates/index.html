@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Previous content remains the same until operation-section -->
+        <h1>File Encryption Tool</h1>
+
+        <div class="info-section">
+            <h2>About This Tool</h2>
+            <p>This secure file encryption tool allows you to protect your sensitive files using advanced encryption
+                standards. Whether you need to encrypt confidential documents or decrypt previously encrypted files, our
+                tool provides a simple and secure solution.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>🐍 Python (Backend)</li>
+                    <li>🌐 HTML/CSS (Frontend)</li>
+                    <li>📜 JavaScript (Frontend)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Libraries Used</h3>
+                <ul>
+                    <li>🔐 Cryptography (Fernet)</li>
+                    <li>📁 OS (File handling)</li>
+                    <li>🔄 Base64 (Encoding)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="operation-section">
+            <h2>Encrypt or Decrypt Your File</h2>
+            <form action="/" method="post">
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="encrypt" name="operation" value="encrypt" checked>
+                        <label for="encrypt">Encrypt File</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="decrypt" name="operation" value="decrypt">
+                        <label for="decrypt">Decrypt File</label>
+                    </div>
+                </div>
+
+                <div class="file-input">
+                    <input type="file" id="fileInput" name="path">
+                </div>
+
+                <div class="button-group">
+                    <button id="processBtn">Process File</button>
+                    <button id="downloadBtn">Download File</button>
+                </div>
+
+                <div id="status" class="status"></div>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://github.com/Amansaxena16" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+            <span class="footer-divider">|</span>
+            <div class="email-link">
+                <i class="far fa-envelope"></i>
+                <a href="mailto:aman16nov.as@gmail.com">aman16nov.as@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</html>

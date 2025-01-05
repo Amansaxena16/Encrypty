@@ -28,29 +28,24 @@ def encryptFile(path,key):
     
 def decryptFile(path,key):
     
-    fernet = Fernet(key)
-    
-    with open(path,'rb') as encryptedFile:
-        encrypted_Content = encryptedFile.read()
-        
-    try:
-        fernet.decrypt(encrypted_Content)  # Check if the file is already decrypted
-        print('File is already decrypted')
-    except Exception as e:
-        pass
+    with open(path,'rb') as file:
+        file_Content = file.read()
     
     try:    
-        decrypted = fernet.decrypt(encrypted_Content) # Decrypt the file
+        fernet = Fernet(key)
+        decrypted = fernet.decrypt(file_Content) # Decrypt the file
 
         with open(path,'wb') as decryptedFile: # Open the file to write it in binary mode
             decryptedFile.write(decrypted)
+            print("File decrypted successfully.")
+            
     except Exception as e:
         print(f"Invalid Key: {e}")
         
 
 def main():
     
-    path = '/home/aman/Work/Encrypty/test.txt'
+    path = '/home/aman/Work/Encrypty/External Practical.xlsx'
     operation = input('Do you want to Encrypt(e) or Decrypt(d) the file : ').lower()
     
     try:
