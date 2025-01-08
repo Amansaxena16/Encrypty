@@ -6,11 +6,11 @@ def readKey():
         
     return key
 
-def encryptFile(path,key):
+def encryptFile(path):
     
     with open(path,'rb') as file:  # Open the file to read it in binary mode
         originalFile = file.read()
-        
+    key = readKey()
     fernet = Fernet(key)
     
     try:
@@ -26,12 +26,13 @@ def encryptFile(path,key):
         encryptedFile.write(encrypt)
         
     
-def decryptFile(path,key):
+def decryptFile(path):
     
     with open(path,'rb') as file:
         file_Content = file.read()
     
     try:    
+        key = readKey()
         fernet = Fernet(key)
         decrypted = fernet.decrypt(file_Content) # Decrypt the file
 
@@ -41,25 +42,5 @@ def decryptFile(path,key):
             
     except Exception as e:
         print(f"Invalid Key: {e}")
-        
 
-def main():
-    
-    path = '/home/aman/Work/Encrypty/External Practical.xlsx'
-    operation = input('Do you want to Encrypt(e) or Decrypt(d) the file : ').lower()
-    
-    try:
-        if(operation != 'e' and operation != 'd'):
-            raise ValueError('Invalid Input')
-        if(operation == 'e'):
-            key = readKey()
-            encryptFile(path,key)
-        else:
-            key = readKey()
-            decryptFile(path,key)   
-    except Exception as e:
-        print(f"An Error Occured : {e}")
-    
-    
-main()
     
