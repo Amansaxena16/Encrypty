@@ -1,23 +1,28 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template,request,send_file
 from main import encryptFile, decryptFile
+import os
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        path = request.form.get('path')
+        file = request.files.get('file')
         operation = request.form.get('operation')
         print(operation)
         
-        if path == "":
+        if not file:
             return render_template('index.html',error = "No File Selected")
+        
+        path = os.path.join('uploads',file.filename)
+        file.save(path)
         
         if operation == "encrypt":
             encryptFile(path)
-            return render_template('index.html',message = "File Encrypted Successfully")
+            process_file_path = path
         else:
             decryptFile(path)
-            return render_template('index.html',message = "File Decrypted Successfully")
+            process_file_path = path
+        return send_file(process_file_path, as_atachment=True)
     return render_template('index.html')
 
 

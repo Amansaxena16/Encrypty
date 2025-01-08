@@ -41,7 +41,7 @@
 
         <div class="operation-section">
             <h2>Encrypt or Decrypt Your File</h2>
-            <form action="/" method="post">
+            <form action="/" method="post" enctype="multipart/form-data">
                 <div class="radio-group">
                     <div class="radio-option">
                         <input type="radio" id="encrypt" name="operation" value="encrypt" checked>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="file-input">
-                    <input type="file" id="fileInput" name="path">
+                    <input type="file" id="fileInput" name="file">
                     <br>
                     <span style="color: red;"><b>{{error}}</b></span>
                 </div>
