@@ -42,5 +42,5 @@ def decryptFile(path):
             
     except Exception as e:
         print(f"Invalid Key: {e}")
-
+        return
     

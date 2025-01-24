@@ -8,7 +8,6 @@ def index():
     if request.method == 'POST':
         file = request.files.get('file')
         operation = request.form.get('operation')
-        print(operation)
         
         if not file:
             return render_template('index.html',error = "No File Selected")

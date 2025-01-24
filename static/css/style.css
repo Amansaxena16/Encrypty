@@ -107,6 +107,7 @@ button {
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: rgb(89, 161, 234);
 }
 
 .status {
