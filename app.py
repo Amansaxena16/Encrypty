@@ -8,20 +8,8 @@ def index():
     if request.method == 'POST':
         file = request.files.get('file')
         operation = request.form.get('operation')
-        
-        if not file:
-            return render_template('index.html',error = "No File Selected")
-        
-        path = os.path.join('uploads',file.filename)
-        file.save(path)
-        
-        if operation == "encrypt":
-            encryptFile(path)
-            process_file_path = path
-        else:
-            decryptFile(path)
-            process_file_path = path
-        return send_file(process_file_path, as_atachment=True)
+
+        print(file)
     return render_template('index.html')
 
 
