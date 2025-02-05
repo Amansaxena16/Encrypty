@@ -6,6 +6,7 @@ processBtn.addEventListener('click', () => {
     if(fileInput.files.length == 0){
         processBtn.disabled = true;
         downloadBtn.disabled = true 
+        alert('Please select a file before submitting!');
     }
 })
 
