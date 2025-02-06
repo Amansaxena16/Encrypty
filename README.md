@@ -3,6 +3,8 @@
 This project is a **Flask-based web application** that allows users to **encrypt and decrypt files** securely. Users can upload a file, choose to encrypt or decrypt it, and the processed file is automatically downloaded to their system.
 
 ---
+![image alt](https://github.com/Amansaxena16/Encrypty/blob/94a1057a9290e84b60b2db95bcf2d3bdba02f250/Screenshot%20From%202025-02-07%2001-13-48.png)
+---
 
 ## 📌 Features
 
