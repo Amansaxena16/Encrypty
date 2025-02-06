@@ -25,7 +25,7 @@ def index():
         
         if operation == "encrypt":
             encryptFile(uploadFile)
-            os.remove(file)
+            # os.remove(file)
             return redirect(url_for('download',filePath=uploadFile,operation=operation))
         else:
             decryptFile(uploadFile)    
