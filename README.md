@@ -19,8 +19,8 @@ This project is a **Flask-based web application** that allows users to **encrypt
 
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/your-username/encryption-web-app.git
-cd encryption-web-app
+git clone https://github.com/Amansaxena16/Encrypty.git
+cd Encrypty
 ```
 
 ### **2️⃣ Create a Virtual Environment (Optional but Recommended)**
